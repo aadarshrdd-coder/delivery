@@ -1,7 +1,7 @@
-# Fresh Veggies – Vegetable Delivery E‑Commerce
+# Switchit – Food, Fruit & Grocery Delivery
 
 ## Overview
-A premium static web app for a vegetable‑delivery service built with vanilla HTML, CSS, and JavaScript. It showcases modern design (gradient hero, glass‑morphism, micro‑animations) and full client‑side cart functionality.
+A premium static web app for a multi-category delivery service built with vanilla HTML, CSS, and JavaScript. It showcases modern design (gradient hero, glass‑morphism, micro‑animations) and full client‑side cart functionality.
 
 ## Directory Layout
 ```
