@@ -1,0 +1,10 @@
+{
+  "name": "switchit",
+  "version": "1.0.0",
+  "description": "Premium food, fruit, and vegetable delivery e-commerce platform",
+  "scripts": {
+    "dev": "npx live-server --port=3000"
+  },
+  "keywords": ["ecommerce", "vegetables", "delivery"],
+  "license": "MIT"
+}

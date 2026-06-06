@@ -1,0 +1,682 @@
+[
+  {
+    "id": 1,
+    "name": "Organic Carrots",
+    "price": 45,
+    "unit": "500g",
+    "description": "Crunchy, sweet organic carrots freshly harvested from local farms. Rich in beta-carotene and perfect for salads, juices, or cooking.",
+    "image": "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Fresh Broccoli",
+    "price": 65,
+    "unit": "250g",
+    "description": "Vibrant green broccoli florets packed with vitamins C and K. Ideal for stir-fries, steaming, or adding to pasta.",
+    "image": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?w=400&h=400&fit=crop",
+    "category": "green",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Baby Spinach",
+    "price": 35,
+    "unit": "200g",
+    "description": "Tender baby spinach leaves, washed and ready to eat. Perfect for salads, smoothies, and sautéing.",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&h=400&fit=crop",
+    "category": "leafy",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "name": "Red Bell Pepper",
+    "price": 55,
+    "unit": "2 pcs",
+    "description": "Sweet, juicy red bell peppers bursting with flavour. Great for grilling, stuffing, or eating raw.",
+    "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Cherry Tomatoes",
+    "price": 50,
+    "unit": "250g",
+    "description": "Plump, vine-ripened cherry tomatoes with an irresistible sweetness. Ideal for salads and snacking.",
+    "image": "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Sweet Potato",
+    "price": 40,
+    "unit": "500g",
+    "description": "Naturally sweet, creamy sweet potatoes. Bake, roast, or mash them for a wholesome side dish.",
+    "image": "https://images.unsplash.com/photo-1594919513072-de035bd5610b?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "name": "Cucumber",
+    "price": 25,
+    "unit": "2 pcs",
+    "description": "Cool, crisp cucumbers freshly picked. A refreshing addition to salads, sandwiches, and raita.",
+    "image": "https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 8,
+    "name": "Fresh Cauliflower",
+    "price": 45,
+    "unit": "1 head",
+    "description": "Snow-white cauliflower head with tight, compact florets. Versatile for curries, roasting, or cauliflower rice.",
+    "image": "https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?w=400&h=400&fit=crop",
+    "category": "green",
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "Green Peas",
+    "price": 60,
+    "unit": "250g",
+    "description": "Sweet, plump green peas shelled and ready to cook. A delightful addition to pulao, curries, and soups.",
+    "image": "https://images.unsplash.com/photo-1587735243615-c03f25aaff15?w=400&h=400&fit=crop",
+    "category": "legume",
+    "featured": false
+  },
+  {
+    "id": 10,
+    "name": "Beetroot",
+    "price": 35,
+    "unit": "500g",
+    "description": "Deep crimson beetroots bursting with earthy sweetness. Excellent for juicing, salads, and roasting.",
+    "image": "https://images.unsplash.com/photo-1593105544559-ecb03bf76f82?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 11,
+    "name": "Eggplant",
+    "price": 30,
+    "unit": "500g",
+    "description": "Glossy purple eggplants perfect for baingan bharta, grilling, or stir-fries.",
+    "image": "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 12,
+    "name": "Fresh Mushrooms",
+    "price": 80,
+    "unit": "200g",
+    "description": "Tender white button mushrooms with a mild, earthy flavour. Perfect for soups, pizzas, and sautés.",
+    "image": "https://images.unsplash.com/photo-1504545102780-26774c1bb073?w=400&h=400&fit=crop",
+    "category": "fungi",
+    "featured": true
+  },
+  {
+    "id": 13,
+    "name": "Potato",
+    "price": 30,
+    "unit": "1 kg",
+    "description": "Versatile all-purpose potatoes. Boil, bake, fry, or mash – the king of vegetables in every kitchen.",
+    "image": "https://images.unsplash.com/photo-1508747703725-719777637510?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 14,
+    "name": "Onion",
+    "price": 35,
+    "unit": "1 kg",
+    "description": "Fresh golden onions – the flavour base of every great dish. Essential for curries, soups, and salads.",
+    "image": "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 15,
+    "name": "Garlic",
+    "price": 50,
+    "unit": "250g",
+    "description": "Aromatic garlic bulbs to add depth and punch to your cooking. Freshly harvested with papery white skin.",
+    "image": "https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 16,
+    "name": "Fresh Ginger",
+    "price": 40,
+    "unit": "200g",
+    "description": "Zingy, aromatic fresh ginger root. A must-have for chai, stir-fries, and traditional remedies.",
+    "image": "https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 17,
+    "name": "Green Cabbage",
+    "price": 30,
+    "unit": "1 head",
+    "description": "Crisp, round green cabbage perfect for coleslaw, stir-fries, and hearty soups.",
+    "image": "https://images.unsplash.com/photo-1550159930-40144aa69597?w=400&h=400&fit=crop",
+    "category": "leafy",
+    "featured": false
+  },
+  {
+    "id": 18,
+    "name": "Lettuce",
+    "price": 40,
+    "unit": "1 head",
+    "description": "Crisp iceberg lettuce for crunchy salads, wraps, and burger toppings. Freshly harvested.",
+    "image": "https://images.unsplash.com/photo-1622206151226-18ca2c9ab4a1?w=400&h=400&fit=crop",
+    "category": "leafy",
+    "featured": false
+  },
+  {
+    "id": 19,
+    "name": "Kale",
+    "price": 55,
+    "unit": "200g",
+    "description": "Nutrient-packed curly kale – the superfood green. Perfect for smoothies, chips, and salads.",
+    "image": "https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?w=400&h=400&fit=crop",
+    "category": "leafy",
+    "featured": false
+  },
+  {
+    "id": 20,
+    "name": "Green Beans",
+    "price": 45,
+    "unit": "250g",
+    "description": "Tender, snappy green beans picked at peak freshness. Great for stir-fries, curries, and steaming.",
+    "image": "https://images.unsplash.com/photo-1557844352-761f2565b576?w=400&h=400&fit=crop",
+    "category": "legume",
+    "featured": false
+  },
+  {
+    "id": 21,
+    "name": "Zucchini",
+    "price": 50,
+    "unit": "500g",
+    "description": "Mild, versatile zucchini perfect for grilling, baking, spiralising, or adding to pasta.",
+    "image": "https://images.unsplash.com/photo-1563252722-6434563a985d?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 22,
+    "name": "Pumpkin",
+    "price": 35,
+    "unit": "500g (sliced)",
+    "description": "Sweet, golden pumpkin slices perfect for soups, halwa, curries, and roasting.",
+    "image": "https://images.unsplash.com/photo-1570586437263-ab629fccc818?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 23,
+    "name": "Okra (Lady Finger)",
+    "price": 40,
+    "unit": "250g",
+    "description": "Fresh, tender okra pods ideal for bhindi masala, frying, or adding to curries.",
+    "image": "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 24,
+    "name": "Radish",
+    "price": 25,
+    "unit": "500g",
+    "description": "Peppery, crunchy white radishes – great in salads, parathas, and pickles.",
+    "image": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 25,
+    "name": "Sweet Corn",
+    "price": 30,
+    "unit": "2 cobs",
+    "description": "Juicy, golden sweet corn cobs. Grill, boil, or add kernels to salads and soups.",
+    "image": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=400&h=400&fit=crop",
+    "category": "grain",
+    "featured": true
+  },
+  {
+    "id": 26,
+    "name": "Asparagus",
+    "price": 90,
+    "unit": "200g",
+    "description": "Elegant green asparagus spears. Roast, grill, or sauté for a gourmet side dish.",
+    "image": "https://images.unsplash.com/photo-1515471209610-dae1c92d8777?w=400&h=400&fit=crop",
+    "category": "green",
+    "featured": false
+  },
+  {
+    "id": 27,
+    "name": "Green Capsicum",
+    "price": 35,
+    "unit": "2 pcs",
+    "description": "Fresh green capsicums with a mild, slightly bitter taste. Perfect for stuffing and stir-fries.",
+    "image": "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 28,
+    "name": "Spring Onion",
+    "price": 20,
+    "unit": "1 bunch",
+    "description": "Fresh spring onions with mild flavour. Great as garnish, in soups, noodles, and salads.",
+    "image": "https://images.unsplash.com/photo-1590165482129-1b8b27698780?w=400&h=400&fit=crop",
+    "category": "leafy",
+    "featured": false
+  },
+  {
+    "id": 29,
+    "name": "Bottle Gourd (Lauki)",
+    "price": 30,
+    "unit": "1 pc",
+    "description": "Light, nutritious bottle gourd – a staple for healthy curries, juices, and kofta.",
+    "image": "https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 30,
+    "name": "Methi (Fenugreek)",
+    "price": 25,
+    "unit": "1 bunch",
+    "description": "Aromatic fenugreek leaves with a distinctive bitter-sweet flavour. Essential for methi paratha and aloo methi.",
+    "image": "https://images.unsplash.com/photo-1591261730799-ee4e6c2d16d7?w=400&h=400&fit=crop",
+    "category": "leafy",
+    "featured": false
+  },
+  {
+    "id": 31,
+    "name": "Bitter Gourd (Karela)",
+    "price": 35,
+    "unit": "250g",
+    "description": "Deeply ridged bitter gourds loaded with health benefits. Stuff, fry, or cook into a dry sabzi.",
+    "image": "https://images.unsplash.com/photo-1589135243171-83017a4c66e2?w=400&h=400&fit=crop",
+    "category": "fruit",
+    "featured": false
+  },
+  {
+    "id": 32,
+    "name": "Turnip",
+    "price": 30,
+    "unit": "500g",
+    "description": "Mild, slightly sweet turnips. Roast, mash, or add to stews for a comforting winter dish.",
+    "image": "https://images.unsplash.com/photo-1592394533824-9440e5d68530?w=400&h=400&fit=crop",
+    "category": "root",
+    "featured": false
+  },
+  {
+    "id": 33,
+    "name": "Alphonso Mango",
+    "price": 450,
+    "unit": "1 dozen",
+    "description": "Premium Ratnagiri Alphonso mangoes. Known for their sunshine yellow skin and incredibly sweet, non-fibrous pulp.",
+    "image": "https://images.unsplash.com/photo-1591073113125-e46713c829ed?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": true
+  },
+  {
+    "id": 34,
+    "name": "Red Delicious Apple",
+    "price": 180,
+    "unit": "1 kg",
+    "description": "Crisp and juicy apples imported from Kinnaur. Perfect for a healthy snack or fruit salads.",
+    "image": "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": false
+  },
+  {
+    "id": 35,
+    "name": "Hyderabadi Chicken Biryani",
+    "price": 320,
+    "unit": "1 Plate",
+    "description": "World-famous dum biryani with long-grain basmati rice, tender chicken, and aromatic spices. Served with Mirchi ka Salan.",
+    "image": "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": true
+  },
+  {
+    "id": 36,
+    "name": "Paneer Butter Masala",
+    "price": 240,
+    "unit": "1 Bowl",
+    "description": "Creamy tomato-based gravy with soft cottage cheese cubes, finished with fresh cream and kasuri methi.",
+    "image": "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": false
+  },
+  {
+    "id": 37,
+    "name": "Double Cheese Margherita",
+    "price": 380,
+    "unit": "10 inch",
+    "description": "Classic Neapolitan style pizza with extra mozzarella, tangy tomato sauce, and fresh basil leaves.",
+    "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=400&h=400&fit=crop",
+    "category": "continental",
+    "featured": true
+  },
+  {
+    "id": 38,
+    "name": "Veg Whopper Burger",
+    "price": 160,
+    "unit": "1 pc",
+    "description": "Flame-grilled plant-based patty with fresh onions, lettuce, tomatoes, and tangy gherkins.",
+    "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=400&fit=crop",
+    "category": "continental",
+    "featured": false
+  },
+  {
+    "id": 39,
+    "name": "Veg Manchurian & Fried Rice",
+    "price": 190,
+    "unit": "Combo",
+    "description": "Deep-fried vegetable balls in a spicy soy-ginger gravy, served with aromatic vegetable fried rice.",
+    "image": "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400&h=400&fit=crop",
+    "category": "chinese",
+    "featured": true
+  },
+  {
+    "id": 40,
+    "name": "Cold Coffee with Ice Cream",
+    "price": 120,
+    "unit": "350ml",
+    "description": "Rich, frothy cold coffee topped with a scoop of vanilla bean ice cream and chocolate drizzle.",
+    "image": "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=400&h=400&fit=crop",
+    "category": "beverages",
+    "featured": false
+  },
+  {
+    "id": 53,
+    "name": "Kiwi Fruit",
+    "price": 150,
+    "unit": "3 pcs",
+    "description": "Zesty green kiwis packed with vitamin C. Perfect for a refreshing snack or fruit salad.",
+    "image": "https://images.unsplash.com/photo-1591735156653-9162c33bd77e?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": false
+  },
+  {
+    "id": 54,
+    "name": "Fresh Pomegranate",
+    "price": 220,
+    "unit": "1 kg",
+    "description": "Premium red pomegranates with juicy, antioxidant-rich seeds. Great for juices or salads.",
+    "image": "https://images.unsplash.com/photo-1541344999736-83eca272f6fc?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": true
+  },
+  {
+    "id": 55,
+    "name": "Tandoori Chicken (Half)",
+    "price": 280,
+    "unit": "4 pcs",
+    "description": "Classic tandoori chicken marinated in yogurt and spices, roasted in a clay oven.",
+    "image": "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": false
+  },
+  {
+    "id": 56,
+    "name": "Butter Naan",
+    "price": 50,
+    "unit": "1 pc",
+    "description": "Soft and fluffy leavened bread baked in tandoor, topped with a generous amount of butter.",
+    "image": "https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": false
+  },
+  {
+    "id": 57,
+    "name": "Chilli Paneer Dry",
+    "price": 210,
+    "unit": "1 Plate",
+    "description": "Indo-Chinese style cottage cheese cubes tossed with bell peppers and onions in a spicy sauce.",
+    "image": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&h=400&fit=crop",
+    "category": "chinese",
+    "featured": false
+  },
+  {
+    "id": 58,
+    "name": "Veg Hakka Noodles",
+    "price": 160,
+    "unit": "1 Plate",
+    "description": "Classic stir-fried noodles with crisp vegetables and authentic Chinese seasonings.",
+    "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=400&fit=crop",
+    "category": "chinese",
+    "featured": false
+  },
+  {
+    "id": 59,
+    "name": "Chocolate Brownie",
+    "price": 130,
+    "unit": "1 pc",
+    "description": "Rich, fudgy chocolate brownie with a crinkle top. Best served warm with ice cream.",
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop",
+    "category": "desserts",
+    "featured": true
+  },
+  {
+    "id": 60,
+    "name": "Fresh Lime Soda",
+    "price": 80,
+    "unit": "300ml",
+    "description": "A refreshing blend of fresh lime juice, sugar/salt, and soda. The perfect summer cooler.",
+    "image": "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&h=400&fit=crop",
+    "category": "beverages",
+    "featured": false
+  },
+  {
+    "id": 41,
+    "name": "Organic Bananas",
+    "price": 60,
+    "unit": "1 dozen",
+    "description": "Sweet and energy-packed Robusta bananas. Perfect for a quick snack or smoothies.",
+    "image": "https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": true
+  },
+  {
+    "id": 42,
+    "name": "Seedless Black Grapes",
+    "price": 120,
+    "unit": "500g",
+    "description": "Sweet, juicy, and seedless black grapes. A perfect refreshing summer fruit.",
+    "image": "https://images.unsplash.com/photo-1537640538966-79f369143f8f?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": false
+  },
+  {
+    "id": 43,
+    "name": "Butter Chicken",
+    "price": 350,
+    "unit": "1 Bowl",
+    "description": "Classic North Indian dish featuring tender chicken pieces in a rich, buttery tomato gravy.",
+    "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": true
+  },
+  {
+    "id": 44,
+    "name": "Dal Makhani",
+    "price": 220,
+    "unit": "1 Bowl",
+    "description": "Slow-cooked black lentils with cream and butter. A staple of Punjabi cuisine.",
+    "image": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": false
+  },
+  {
+    "id": 45,
+    "name": "Chole Bhature",
+    "price": 180,
+    "unit": "1 Plate",
+    "description": "Spiced chickpeas served with fluffy, deep-fried leavened bread. A beloved street food.",
+    "image": "https://images.unsplash.com/photo-1599307767316-776533bb941c?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": true
+  },
+  {
+    "id": 46,
+    "name": "Penne Arrabbiata",
+    "price": 280,
+    "unit": "1 Bowl",
+    "description": "Pasta in a spicy tomato sauce with garlic and dried red chili peppers.",
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=400&fit=crop",
+    "category": "continental",
+    "featured": false
+  },
+  {
+    "id": 47,
+    "name": "Chicken Hakka Noodles",
+    "price": 210,
+    "unit": "1 Plate",
+    "description": "Wok-tossed noodles with shredded chicken, vegetables, and savory Chinese sauces.",
+    "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=400&fit=crop",
+    "category": "chinese",
+    "featured": true
+  },
+  {
+    "id": 48,
+    "name": "Veg Spring Rolls",
+    "price": 140,
+    "unit": "6 pcs",
+    "description": "Crispy fried rolls filled with seasoned vegetables. Served with sweet chili sauce.",
+    "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=400&h=400&fit=crop",
+    "category": "chinese",
+    "featured": false
+  },
+  {
+    "id": 49,
+    "name": "Masala Chai",
+    "price": 40,
+    "unit": "1 Cup",
+    "description": "Aromatic spiced tea brewed with milk and a blend of ginger, cardamom, and cloves.",
+    "image": "https://images.unsplash.com/photo-1561336313-0bd5e0b27ec8?w=400&h=400&fit=crop",
+    "category": "beverages",
+    "featured": false
+  },
+  {
+    "id": 50,
+    "name": "Oreo Milkshake",
+    "price": 150,
+    "unit": "300ml",
+    "description": "Thick and creamy milkshake blended with Oreo cookies and topped with whipped cream.",
+    "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&h=400&fit=crop",
+    "category": "beverages",
+    "featured": true
+  },
+  {
+    "id": 51,
+    "name": "Pav Bhaji",
+    "price": 140,
+    "unit": "1 Plate",
+    "description": "Spiced vegetable mash served with butter-toasted buns, onions, and lemon.",
+    "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": true
+  },
+  {
+    "id": 52,
+    "name": "Gulab Jamun",
+    "price": 90,
+    "unit": "2 pcs",
+    "description": "Soft, deep-fried milk dumplings soaked in rose-flavored sugar syrup.",
+    "image": "https://images.unsplash.com/photo-1589119908995-c6837fa14848?w=400&h=400&fit=crop",
+    "category": "desserts",
+    "featured": false
+  },
+  {
+    "id": 61,
+    "name": "Crispy Samosa",
+    "price": 40,
+    "unit": "2 pcs",
+    "description": "Golden-brown pastry triangles filled with a spiced potato and pea mixture. Served with tangy tamarind chutney.",
+    "image": "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": true
+  },
+  {
+    "id": 62,
+    "name": "Veg Steamed Momos",
+    "price": 120,
+    "unit": "8 pcs",
+    "description": "Delicate steamed dumplings filled with finely chopped vegetables and herbs. Served with a spicy red chili dip.",
+    "image": "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=400&fit=crop",
+    "category": "chinese",
+    "featured": false
+  },
+  {
+    "id": 63,
+    "name": "Garlic Butter Naan",
+    "price": 70,
+    "unit": "1 pc",
+    "description": "Soft, tandoor-baked flatbread infused with fresh garlic and brushed with melted butter.",
+    "image": "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": false
+  },
+  {
+    "id": 64,
+    "name": "Fresh Pineapple",
+    "price": 95,
+    "unit": "1 pc",
+    "description": "Sweet and tangy tropical pineapple, harvested at peak ripeness. Great for snacking or desserts.",
+    "image": "https://images.unsplash.com/photo-1481349579774-183571146683?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": false
+  },
+  {
+    "id": 65,
+    "name": "Watermelon",
+    "price": 120,
+    "unit": "3-4 kg",
+    "description": "Large, hydrating watermelon with sweet red flesh. Perfect for a refreshing summer treat.",
+    "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=400&fit=crop",
+    "category": "fruits",
+    "featured": true
+  },
+  {
+    "id": 66,
+    "name": "Mango Lassi",
+    "price": 90,
+    "unit": "300ml",
+    "description": "A creamy, smooth blend of ripe mangoes, thick yogurt, and a touch of cardamom.",
+    "image": "https://images.unsplash.com/photo-1546173159-315724a31696?w=400&h=400&fit=crop",
+    "category": "beverages",
+    "featured": true
+  },
+  {
+    "id": 67,
+    "name": "Paneer Tikka",
+    "price": 260,
+    "unit": "1 Plate",
+    "description": "Succulent cubes of paneer marinated in a spiced yogurt blend and grilled to perfection in a tandoor.",
+    "image": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&h=400&fit=crop",
+    "category": "indian",
+    "featured": false
+  },
+  {
+    "id": 68,
+    "name": "Caesar Salad",
+    "price": 220,
+    "unit": "1 Bowl",
+    "description": "Crisp romaine lettuce tossed with creamy Caesar dressing, crunchy croutons, and parmesan cheese.",
+    "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=400&fit=crop",
+    "category": "continental",
+    "featured": false
+  }
+]

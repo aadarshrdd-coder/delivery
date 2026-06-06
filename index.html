@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Switchit – Food, Fruits & Veggies Delivery</title>
+  <meta name="description" content="Premium vegetable delivery service. Fresh, organic produce delivered to your door.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="locations.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">🚀 Switchit</a>
+    <nav class="nav-links">
+      <a href="index.html" data-link>Home</a>
+      <a href="products.html" data-link>Shop</a>
+      <a href="cart.html" data-link>Cart (<span id="cart-count">0</span>)</a>
+      <a href="checkout.html" data-link>Checkout</a>
+    </nav>
+  </header>
+
+  <main class="hero-section">
+    <div class="hero-content">
+      <h1>Meals & Groceries</h1>
+      <p>Order from your favorite restaurants or pick the freshest organic produce.</p>
+      <a href="products.html" class="btn-primary" data-link>Start Shopping</a>
+    </div>
+  </main>
+
+  <section class="search-section">
+    <div class="location-discovery">
+      <div class="location-header">
+        <button id="detect-location-btn" class="btn-secondary">📍 Detect My Location</button>
+        <span id="location-status">or select manually</span>
+        <button id="show-selects-btn" class="btn-text">Change City</button>
+      </div>
+      
+      <div class="location-dropdowns" id="location-dropdowns" style="display:none;">
+        <select id="home-state-select">
+          <option value="">Select State</option>
+        </select>
+        <select id="home-city-select" disabled>
+          <option value="">Select City</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="search-group">
+      <input type="text" id="home-search-input" placeholder="Search items A‑Z…" />
+    </div>
+  </section>
+
+  <section class="restaurants-section" id="restaurants-section" style="display:none;">
+    <h2>Restaurants in <span id="active-city-name">...</span></h2>
+    <div class="restaurant-grid" id="restaurant-grid"></div>
+  </section>
+
+  <section class="featured-products">
+    <h2>Featured Picks</h2>
+    <div class="product-grid" id="featured-grid">
+      <!-- JS will inject product cards -->
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Switchit. All rights reserved.</p>
+  </footer>
+</body>
+</html>

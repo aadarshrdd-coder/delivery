@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart – Switchit</title>
+  <meta name="description" content="Review your shopping cart, adjust quantities, and proceed to checkout." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">🚀 Switchit</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html" class="active">Cart (<span id="cart-count">0</span>)</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <section class="page-banner cart-banner">
+    <h1>Your Cart</h1>
+  </section>
+
+  <section class="cart-section">
+    <div class="cart-items" id="cart-items">
+      <!-- JS renders rows -->
+    </div>
+    <p class="empty-cart" id="empty-cart" style="display:none;">Your cart is empty. <a href="products.html">Start shopping →</a></p>
+
+    <div class="cart-summary" id="cart-summary" style="display:none;">
+      <div class="summary-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="summary-row"><span>Delivery</span><span id="delivery-fee">₹30</span></div>
+      <div class="summary-row total"><span>Total</span><span id="total">₹0</span></div>
+      <a href="checkout.html" class="btn-primary checkout-btn">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Switchit. All rights reserved.</p>
+  </footer>
+</body>
+</html>

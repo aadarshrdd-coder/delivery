@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop Everything – Switchit</title>
+  <meta name="description" content="Browse our full range of farm-fresh, organic vegetables. Filter by category, sort by price, and add to cart instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">🚀 Switchit</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Shop</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <a href="checkout.html">Checkout</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">☰</button>
+  </header>
+
+  <section class="page-banner">
+    <h1>Food & Delights</h1>
+    <p>From farm-fresh produce to chef-crafted meals, delivered in minutes.</p>
+  </section>
+
+  <section class="catalogue-controls">
+    <div class="filter-group">
+      <label for="category-filter">Category</label>
+      <select id="category-filter">
+        <option value="all">All</option>
+        <option value="root">Root</option>
+        <option value="green">Green</option>
+        <option value="leafy">Leafy</option>
+        <option value="fruit">Fruit Veggies</option>
+        <option value="legume">Legumes</option>
+        <option value="fungi">Fungi</option>
+        <option value="grain">Grain</option>
+        <option value="fruits">Fresh Fruits</option>
+        <option value="indian">Indian Mains</option>
+        <option value="continental">Burgers & Pizza</option>
+        <option value="chinese">Chinese</option>
+        <option value="beverages">Beverages</option>
+        <option value="desserts">Desserts & Sweets</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="sort-select">Sort by</label>
+      <select id="sort-select">
+        <option value="name-asc">Name A‑Z</option>
+        <option value="name-desc">Name Z‑A</option>
+        <option value="price-asc">Price: Low → High</option>
+        <option value="price-desc">Price: High → Low</option>
+      </select>
+    </div>
+    <div class="search-group">
+      <input type="text" id="search-input" placeholder="Search food, fruits or veggies…" />
+    </div>
+  </section>
+
+  <section class="products-section">
+    <div class="product-grid" id="products-grid">
+      <!-- JS will render cards -->
+    </div>
+    <p class="empty-state" id="empty-state" style="display:none;">No items match your filters.</p>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Switchit. All rights reserved.</p>
+  </footer>
+</body>
+</html>
