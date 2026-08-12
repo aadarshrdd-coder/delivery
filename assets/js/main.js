@@ -1,5 +1,5 @@
 /* =====================================================
-   main.js – Core logic for Switchit e-commerce
+   main.js – Core logic for Fresh Food, Fruits & Veggies e-commerce
    ===================================================== */
 
 // ---- Business Config ----
@@ -66,9 +66,8 @@ function updateCartCount() {
 
 // ---- Toast notification ----
 function showToast(msg) {
-  let toast = document.getElementById('fv-toast');
-  if (!toast) {
-    toast = document.createElement('div');
+  const toast = document.getElementById('fv-toast') || document.createElement('div');
+  if (!toast.parentElement) {
     toast.id = 'fv-toast';
     document.body.appendChild(toast);
   }
@@ -84,12 +83,11 @@ function fmt(price) {
 
 // ---- Product card HTML ----
 function productCardHTML(p) {
-  // Store only essential data for cart (avoid storing full image URL in onclick)
-  const cartData = JSON.stringify({ id: p.id, name: p.name, price: p.price, unit: p.unit, image: p.image });
+  const cartData = JSON.stringify({ id: p.id, name: p.name, price: p.price, unit: p.unit, image: p.image }).replace(/'/g, "&apos;");
   return `
     <div class="product-card" data-id="${p.id}">
       <div class="card-img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('img-fallback');this.parentElement.setAttribute('data-label','${p.name}')" />
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
       </div>
       <div class="info">
         <h3>${p.name}</h3>
@@ -98,7 +96,7 @@ function productCardHTML(p) {
       </div>
       <div class="card-actions">
         <a href="product.html?id=${p.id}" class="btn-view">View</a>
-        <button onclick='addToCart(${cartData.replace(/'/g, "&#39;")})'>Add to Cart</button>
+        <button onclick='addToCart(${cartData})'>Add to Cart</button>
       </div>
     </div>`;
 }
@@ -178,19 +176,19 @@ async function performDynamicLocationDetection(stateEl, cityEl, statusEl, callba
 
 // ---- Restaurant Discovery ----
 const RESTAURANT_DATA = [
-  { name: "Biryani Blues", cuisine: "Hyderabadi, Indian", rating: 4.4, time: "35 min", image: "https://images.unsplash.com/photo-1563379091339-03b1cbb897f8?w=400&h=400&fit=crop" },
-  { name: "Wok & Roll", cuisine: "Chinese, Pan-Asian", rating: 4.2, time: "25 min", image: "https://images.unsplash.com/photo-1512058560366-cd242d4235cd?w=400&h=400&fit=crop" },
-  { name: "The Burger Club", cuisine: "Continental, American", rating: 4.6, time: "20 min", image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=400&fit=crop" },
-  { name: "Spice Garden", cuisine: "North Indian, Tandoor", rating: 4.3, time: "40 min", image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=400&fit=crop" },
-  { name: "Healthy Bites", cuisine: "Salads, Juices", rating: 4.7, time: "15 min", image: "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400&h=400&fit=crop" },
-  { name: "Sweet Tooth", cuisine: "Desserts, Bakery", rating: 4.5, time: "20 min", image: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400&h=400&fit=crop" }
+  { name: "Biryani Blues", cuisine: "Hyderabadi, Indian", rating: 4.4, time: "35 min", image: "https://images.unsplash.com/photo-1563379091339-03b21bc4a4f8?w=400&h=400&fit=crop" },
+  { name: "Wok & Roll", cuisine: "Chinese, Pan-Asian", rating: 4.2, time: "25 min", image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=400&fit=crop" },
+  { name: "The Burger Club", cuisine: "Continental, American", rating: 4.6, time: "20 min", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=400&fit=crop" },
+  { name: "Spice Garden", cuisine: "North Indian, Tandoor", rating: 4.3, time: "40 min", image: "https://images.unsplash.com/photo-1585937421612-70a0f261c28c?w=400&h=400&fit=crop" },
+  { name: "Healthy Bites", cuisine: "Salads, Juices", rating: 4.7, time: "15 min", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=400&fit=crop" },
+  { name: "Sweet Tooth", cuisine: "Desserts, Bakery", rating: 4.5, time: "20 min", image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=400&fit=crop" }
 ];
 
 function restaurantCardHTML(r, city) {
   return `
     <div class="restaurant-card product-card visible">
       <div class="card-img">
-        <img src="${r.image}" alt="${r.name}" />
+        <img src="${r.image}" alt="${r.name}" loading="lazy" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
       </div>
       <div class="info">
         <h3>${r.name}</h3>
@@ -351,13 +349,13 @@ async function initProductDetail() {
     return;
   }
 
-  document.title = `${p.name} – Switchit`;
+  document.title = `${p.name} – Fresh Food, Fruits & Veggies`;
 
   const cartData = JSON.stringify({ id: p.id, name: p.name, price: p.price, unit: p.unit, image: p.image });
   container.innerHTML = `
     <div class="detail-grid">
       <div class="detail-img">
-        <img src="${p.image}" alt="${p.name}" />
+        <img src="${p.image}" alt="${p.name}" loading="lazy" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
       </div>
       <div class="detail-info">
         <h1>${p.name}</h1>
@@ -393,7 +391,9 @@ function initCart() {
 
     itemsContainer.innerHTML = cart.map(item => `
       <div class="cart-row">
-        <img class="cart-thumb" src="${item.image}" alt="${item.name}" />
+        <div class="cart-thumb-wrapper">
+          <img class="cart-thumb" src="${item.image}" alt="${item.name}" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
+        </div>
         <div class="cart-item-info">
           <h3>${item.name}</h3>
           <p>${fmt(item.price)} × ${item.qty}</p>
@@ -440,7 +440,12 @@ function initCheckout() {
     const delivery = calculateDelivery(subtotal, stateSelect.value, citySelect.value);
     overview.innerHTML = `
       <h3>Order Summary</h3>
-      ${cart.map(i => `<div class="overview-row"><span>${i.name} × ${i.qty}</span><span>${fmt(i.price * i.qty)}</span></div>`).join('')}
+      ${cart.map(i => `
+        <div class="overview-row" style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem;">
+          <img src="${i.image}" alt="${i.name}" style="width: 32px; height: 32px; border-radius: 6px; object-fit: cover; background: var(--clr-glass);" onerror="this.style.display='none'">
+          <span style="flex: 1;">${i.name} × ${i.qty}</span>
+          <span>${fmt(i.price * i.qty)}</span>
+        </div>`).join('')}
       <div class="overview-row total"><span>Total (Delivery: ${delivery === 0 ? 'FREE' : fmt(delivery)})</span><span>${fmt(subtotal + delivery)}</span></div>
     `;
   }
@@ -499,6 +504,8 @@ function initCheckout() {
     const total = subtotal + delivery;
     const distance = getMockDistance(customerState, customerCity);
 
+    const partner = assignDeliveryPartner();
+
     // Construct order data to "send" to owner
     const orderData = {
       orderId: orderId,
@@ -514,6 +521,7 @@ function initCheckout() {
       payment: document.getElementById('payment-method').value,
       total: total,
       delivery: delivery,
+      deliveryPartner: partner,
       timestamp: new Date().toISOString()
     };
 
@@ -527,18 +535,36 @@ function initCheckout() {
         <div style="text-align: left; margin: 1rem 0; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; font-size: 0.9rem;">
           <p><strong>Order ID:</strong> #${orderId}</p>
           <p><strong>Total Amount:</strong> ${fmt(total)}</p>
-          <p><strong>Items:</strong> ${items.length} item(s)</p>
+          <p style="margin-bottom: 0.3rem;"><strong>Items Ordered:</strong></p>
+          <div style="max-height: 100px; overflow-y: auto; margin: 0.5rem 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 0; padding-right: 5px;">
+            ${items.map(i => `
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 0.4rem; color: var(--clr-text-muted);">
+                <div style="display: flex; align-items: center; gap: 0.6rem;">
+                  <img src="${i.image}" alt="${i.name}" style="width: 24px; height: 24px; border-radius: 4px; object-fit: cover; background: rgba(255,255,255,0.1);" onerror="this.style.display='none'">
+                  <span>${i.name} × ${i.qty}</span>
+                </div>
+                <span>${fmt(i.price * i.qty)}</span>
+              </div>`).join('')}
+          </div>
           <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--clr-text-muted);">Delivering to: ${orderData.customer.city}</p>
+        </div>
+        <div style="text-align: left; margin-top: 1rem; padding: 1rem; background: rgba(46,139,87,0.15); border-radius: 8px; border: 1px solid var(--clr-primary);">
+          <p style="color: var(--clr-primary); font-weight: 700; margin-bottom: 0.4rem;">🚚 Delivery Partner Assigned</p>
+          <p style="font-size: 0.95rem;"><strong>${partner.name}</strong> is on the way!</p>
+          <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Vehicle: ${partner.vehicle}</p>
+          <p style="font-size: 0.85rem; color: var(--clr-text-muted);">Contact: ${partner.phone}</p>
+          <p id="partner-tracking" style="font-size: 0.85rem; color: var(--clr-accent); margin-top: 0.6rem; font-weight: 600;">📍 Initializing tracking...</p>
         </div>
       `;
     }
 
     // Construct WhatsApp message to send to the owner (8978920932)
-    let msg = `*New Order - Switchit* (#${orderId})\n\n`;
+    let msg = `*New Order - Fresh Food, Fruits & Veggies* (#${orderId})\n\n`;
     msg += `*Customer:* ${orderData.customer.name}\n`;
     msg += `*Email:* ${orderData.customer.email}\n`;
     msg += `*Phone:* ${orderData.customer.phone}\n`;
     msg += `*Location:* ${orderData.customer.city}, ${orderData.customer.state} (~${distance}km)\n`;
+    msg += `*Delivery Partner:* ${partner.name} (${partner.phone})\n`;
     msg += `*Delivery Address:* ${orderData.customer.address}\n\n`;
     msg += `*Items:* \n`;
 
@@ -561,7 +587,29 @@ function initCheckout() {
     localStorage.removeItem('fv_cart');
     updateCartCount();
     document.getElementById('success-modal').style.display = 'flex';
+
+    // Start live tracking simulation (random start between 1.5km and 4km)
+    const startDist = Math.random() * 2.5 + 1.5;
+    startTrackingSimulation(partner.name, startDist);
   });
+}
+
+// ---- Live Tracking Simulation ----
+function startTrackingSimulation(partnerName, initialDistance) {
+  const trackingEl = document.getElementById('partner-tracking');
+  if (!trackingEl) return;
+
+  let distance = initialDistance;
+  const interval = setInterval(() => {
+    distance -= 0.2; // Simulate moving 200m closer
+    if (distance <= 0) {
+      distance = 0;
+      trackingEl.innerHTML = `📍 <strong>Arrived!</strong> ${partnerName} is at your doorstep.`;
+      clearInterval(interval);
+    } else {
+      trackingEl.innerHTML = `📍 <strong>Distance:</strong> ${distance.toFixed(1)} km away from you`;
+    }
+  }, 4000); // Update every 4 seconds to simulate movement
 }
 
 // ---- Scroll fade-in observer ----
@@ -580,6 +628,19 @@ function observeFadeIn() {
     });
   }, { threshold: 0.15 });
   cards.forEach(c => observer.observe(c));
+}
+
+// ---- Delivery Partner Simulation ----
+const MOCK_DELIVERY_PARTNERS = [
+  { name: "Rahul Sharma", phone: "+91 98765 43210", vehicle: "Electric Scooter", rating: 4.8 },
+  { name: "Amit Patel", phone: "+91 91234 56789", vehicle: "Royal Enfield", rating: 4.9 },
+  { name: "Suresh Kumar", phone: "+91 99887 76655", vehicle: "Hero Splendor", rating: 4.7 },
+  { name: "Priya Singh", phone: "+91 90000 11111", vehicle: "Ather 450X", rating: 5.0 }
+];
+
+function assignDeliveryPartner() {
+  const index = Math.floor(Math.random() * MOCK_DELIVERY_PARTNERS.length);
+  return MOCK_DELIVERY_PARTNERS[index];
 }
 
 // ---- Mobile nav toggle ----
