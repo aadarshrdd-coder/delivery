@@ -107,7 +107,7 @@ img { max-width: 100%; display: block; }
   min-height: 55vh;
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-              url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600&h=900&fit=crop');
+              url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"%3E%3Cdefs%3E%3ClinearGradient id="g" x1="0" x2="1" y1="0" y2="1"%3E%3Cstop stop-color="%2322c55e"/%3E%3Cstop offset="1" stop-color="%23f97316"/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="1600" height="900" fill="%23081210"/%3E%3Ccircle cx="1180" cy="160" r="300" fill="%2322c55e" opacity=".38"/%3E%3Ccircle cx="320" cy="720" r="360" fill="%23f97316" opacity=".32"/%3E%3Cpath d="M0 620c210-90 340-20 520-80 180-60 310-210 560-140s310 190 520 90v410H0z" fill="url(%23g)" opacity=".72"/%3E%3Crect x="210" y="250" width="1180" height="260" rx="48" fill="%23ffffff" opacity=".12"/%3E%3Ctext x="800" y="415" text-anchor="middle" font-family="Arial" font-size="82" font-weight="700" fill="%23ffffff" opacity=".78"%3EFresh Food%3C/text%3E%3C/svg%3E');
   background-size: cover; background-position: center;
   text-align: center;
   position: relative;
@@ -148,7 +148,7 @@ img { max-width: 100%; display: block; }
 .restaurants-section { 
   padding: 3rem 2.5rem; 
   background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
-              url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&h=800&fit=crop');
+              url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800"%3E%3Crect width="1600" height="800" fill="%2317110c"/%3E%3Ccircle cx="300" cy="180" r="190" fill="%23ef4444" opacity=".42"/%3E%3Ccircle cx="1270" cy="610" r="270" fill="%23f59e0b" opacity=".36"/%3E%3Crect x="180" y="250" width="1240" height="300" rx="56" fill="%23ffffff" opacity=".1"/%3E%3Cpath d="M330 540c180-170 350-170 520 0s360 160 540 0" fill="none" stroke="%2322c55e" stroke-width="64" opacity=".45"/%3E%3Ctext x="800" y="430" text-anchor="middle" font-family="Arial" font-size="70" font-weight="700" fill="%23ffffff" opacity=".72"%3ERestaurants%3C/text%3E%3C/svg%3E');
   background-size: cover; background-attachment: fixed;
 }
 .restaurants-section h2 { margin-bottom: 2rem; font-size: 1.8rem; }
@@ -238,7 +238,7 @@ img { max-width: 100%; display: block; }
   padding: 1.5rem 1rem;
   text-align: center;
   background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-              url('https://images.unsplash.com/photo-1506484334402-40ff22e0d467?w=1200&h=400&fit=crop');
+              url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"%3E%3Crect width="1200" height="400" fill="%2318120d"/%3E%3Ccircle cx="1020" cy="80" r="190" fill="%23f97316" opacity=".4"/%3E%3Ccircle cx="190" cy="360" r="230" fill="%2322c55e" opacity=".34"/%3E%3Cpath d="M0 280c170-70 290-30 430-80 150-54 260-150 430-88 170 62 220 126 340 70v218H0z" fill="%23ffffff" opacity=".12"/%3E%3C/svg%3E');
   background-size: cover; background-position: center;
 }
 .page-banner h1 {

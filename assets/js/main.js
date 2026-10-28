@@ -81,13 +81,102 @@ function fmt(price) {
   return '₹' + Number(price).toLocaleString('en-IN');
 }
 
+// ---- Reliable image fallbacks ----
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
+
+function createFallbackImage(name = 'Fresh Food', category = 'food') {
+  const palettes = {
+    root: ['#f97316', '#fed7aa'],
+    green: ['#16a34a', '#bbf7d0'],
+    leafy: ['#15803d', '#dcfce7'],
+    fruit: ['#ef4444', '#fecaca'],
+    fruits: ['#e11d48', '#ffe4e6'],
+    dairy: ['#0284c7', '#bae6fd'],
+    bakery: ['#b45309', '#fde68a'],
+    snacks: ['#ca8a04', '#fef08a'],
+    grain: ['#a16207', '#fef3c7'],
+    indian: ['#dc2626', '#fed7aa'],
+    continental: ['#7c3aed', '#ddd6fe'],
+    chinese: ['#c2410c', '#ffedd5'],
+    beverages: ['#0891b2', '#cffafe'],
+    desserts: ['#db2777', '#fbcfe8'],
+    packaged: ['#475569', '#e2e8f0'],
+    'personal-care': ['#0d9488', '#ccfbf1'],
+    household: ['#4f46e5', '#e0e7ff'],
+    brand: ['#16a34a', '#ffedd5'],
+    food: ['#22c55e', '#fef3c7']
+  };
+  const [dark, light] = palettes[category] || palettes.food;
+  const safeName = escapeHTML(name);
+  const initials = safeName
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map(word => word[0])
+    .join('')
+    .toUpperCase() || 'FF';
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+      <defs>
+        <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0" stop-color="${light}"/>
+          <stop offset="1" stop-color="${dark}"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="400" fill="url(#bg)"/>
+      <circle cx="310" cy="84" r="86" fill="rgba(255,255,255,0.24)"/>
+      <circle cx="80" cy="320" r="120" fill="rgba(255,255,255,0.16)"/>
+      <rect x="72" y="72" width="256" height="256" rx="42" fill="rgba(255,255,255,0.82)"/>
+      <text x="200" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="86" font-weight="700" fill="${dark}">${initials}</text>
+      <text x="200" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">${safeName}</text>
+    </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function imageAttrs(name, src, category = 'food') {
+  const fallback = createFallbackImage(name, category);
+  return `src="${escapeHTML(src || fallback)}" alt="${escapeHTML(name)}" data-fallback="${fallback}" onload="markImageLoaded(this)" onerror="useFallbackImage(this)"`;
+}
+
+function markImageLoaded(img) {
+  img.classList.add('loaded');
+  img.parentElement?.classList.add('loaded');
+}
+
+function useFallbackImage(img) {
+  const fallback = img.dataset.fallback || createFallbackImage(img.alt);
+  if (img.src !== fallback) {
+    img.src = fallback;
+    return;
+  }
+  markImageLoaded(img);
+}
+
+function initReliableLogos() {
+  document.querySelectorAll('.logo img').forEach(img => {
+    img.dataset.fallback = createFallbackImage('Fresh Food', 'brand');
+    img.onerror = () => useFallbackImage(img);
+    if (!img.complete || img.naturalWidth === 0) {
+      img.src = img.dataset.fallback;
+    }
+  });
+}
+
 // ---- Product card HTML ----
 function productCardHTML(p) {
   const cartData = JSON.stringify({ id: p.id, name: p.name, price: p.price, unit: p.unit, image: p.image }).replace(/'/g, "&apos;");
   return `
     <div class="product-card" data-id="${p.id}">
       <div class="card-img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
+        <img ${imageAttrs(p.name, p.image, p.category)} loading="lazy" />
       </div>
       <div class="info">
         <h3>${p.name}</h3>
@@ -188,7 +277,7 @@ function restaurantCardHTML(r, city) {
   return `
     <div class="restaurant-card product-card visible">
       <div class="card-img">
-        <img src="${r.image}" alt="${r.name}" loading="lazy" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
+        <img ${imageAttrs(r.name, r.image, 'indian')} loading="lazy" />
       </div>
       <div class="info">
         <h3>${r.name}</h3>
@@ -355,7 +444,7 @@ async function initProductDetail() {
   container.innerHTML = `
     <div class="detail-grid">
       <div class="detail-img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
+        <img ${imageAttrs(p.name, p.image, p.category)} loading="lazy" />
       </div>
       <div class="detail-info">
         <h1>${p.name}</h1>
@@ -392,7 +481,7 @@ function initCart() {
     itemsContainer.innerHTML = cart.map(item => `
       <div class="cart-row">
         <div class="cart-thumb-wrapper">
-          <img class="cart-thumb" src="${item.image}" alt="${item.name}" onload="this.classList.add('loaded'); this.parentElement.classList.add('loaded')" onerror="this.style.opacity='0'" />
+          <img class="cart-thumb" ${imageAttrs(item.name, item.image)} />
         </div>
         <div class="cart-item-info">
           <h3>${item.name}</h3>
@@ -442,7 +531,7 @@ function initCheckout() {
       <h3>Order Summary</h3>
       ${cart.map(i => `
         <div class="overview-row" style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem;">
-          <img src="${i.image}" alt="${i.name}" style="width: 32px; height: 32px; border-radius: 6px; object-fit: cover; background: var(--clr-glass);" onerror="this.style.display='none'">
+          <img ${imageAttrs(i.name, i.image)} style="width: 32px; height: 32px; border-radius: 6px; object-fit: cover; background: var(--clr-glass);">
           <span style="flex: 1;">${i.name} × ${i.qty}</span>
           <span>${fmt(i.price * i.qty)}</span>
         </div>`).join('')}
@@ -540,7 +629,7 @@ function initCheckout() {
             ${items.map(i => `
               <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; margin-bottom: 0.4rem; color: var(--clr-text-muted);">
                 <div style="display: flex; align-items: center; gap: 0.6rem;">
-                  <img src="${i.image}" alt="${i.name}" style="width: 24px; height: 24px; border-radius: 4px; object-fit: cover; background: rgba(255,255,255,0.1);" onerror="this.style.display='none'">
+                  <img ${imageAttrs(i.name, i.image)} style="width: 24px; height: 24px; border-radius: 4px; object-fit: cover; background: rgba(255,255,255,0.1);">
                   <span>${i.name} × ${i.qty}</span>
                 </div>
                 <span>${fmt(i.price * i.qty)}</span>
@@ -654,6 +743,7 @@ function initMobileNav() {
 
 // ---- Boot ----
 document.addEventListener('DOMContentLoaded', () => {
+  initReliableLogos();
   updateCartCount();
   initMobileNav();
   initHome();
